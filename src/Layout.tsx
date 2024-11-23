@@ -152,8 +152,8 @@ const Layout: FC = () => {
       </Heading>
       <Table.Root textAlign="center">
         <Table.Body>
-          {allEffectTurns.map((effects) => (
-            <Table.Row key={effects[0][0].name}>
+          {allEffectTurns.map((effects, index) => (
+            <Table.Row key={index}>
               {effects.map(
                 ([effect, turns], index) =>
                   [0, 1].some((i) => allEffectTurns[i][index][1] > 0) && (

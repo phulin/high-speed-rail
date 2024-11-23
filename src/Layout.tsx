@@ -138,6 +138,7 @@ const Layout: FC = () => {
 
   return (
     <Stack
+      align="center"
       textAlign="center"
       p={8}
       border={duplicates ? "solid 3px red" : undefined}

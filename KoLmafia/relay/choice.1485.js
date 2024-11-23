@@ -8,9 +8,8 @@ function main(pageText) {
     "data/high-speed-rail-load.js",
   )}</script>`;
   write(
-    urlDecode(pageText)
-      .replace("</body>", snippet + "</body>")
-      .replace('<div id="fml"', '<div id="fml" style="display: none;"'),
+    urlDecode(pageText).replace("</body>", snippet + "</body>"),
+    // .replace('<div id="fml"', '<div id="fml" style="display: none;"'),
   );
 }
 

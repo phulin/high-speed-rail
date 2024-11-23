@@ -3,9 +3,10 @@ import {
   createSystem,
   defaultBaseConfig,
 } from "@chakra-ui/react";
-import Layout from "./Layout";
 import { FC } from "react";
 import { RefreshContextProvider } from "tome-kolmafia-react";
+
+import Layout from "./Layout";
 
 const system = createSystem(defaultBaseConfig);
 

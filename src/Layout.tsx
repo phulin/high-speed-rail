@@ -12,12 +12,12 @@ import { Effect, haveEffect } from "kolmafia";
 import { $effects } from "libram";
 import { ArrowDown, ArrowUp, CircleArrowRight } from "lucide-react";
 import {
-  MouseEvent,
   FC,
+  MouseEvent,
   useCallback,
+  useContext,
   useMemo,
   useState,
-  useContext,
 } from "react";
 import { RefreshContext } from "tome-kolmafia-react";
 
@@ -39,7 +39,7 @@ const Layout: FC = () => {
     if (!form) return {};
     const pwdInput = form.elements.namedItem("pwd") as HTMLInputElement;
     const selects = [...new Array(8).keys()].map(
-      (i) => form.elements.namedItem(`slot[${i}]`) as HTMLSelectElement
+      (i) => form.elements.namedItem(`slot[${i}]`) as HTMLSelectElement,
     );
     const options = [
       ...(selects[0]?.getElementsByTagName("option") ?? []),
@@ -51,7 +51,7 @@ const Layout: FC = () => {
     const selectedStations = selects.map((select) => parseInt(select.value));
 
     const positionString = form.innerHTML.match(
-      /Your train is about to pass station ([0-9])\./
+      /Your train is about to pass station ([0-9])\./,
     )?.[1];
     return {
       pwd: pwdInput.value,
@@ -65,7 +65,7 @@ const Layout: FC = () => {
     number[]
   >(initialSelectedStations ?? []);
   const [selectedStations, setSelectedStations] = useState<number[]>(
-    initialSelectedStations ?? []
+    initialSelectedStations ?? [],
   );
   const [isLoading, setIsLoading] = useState(false);
 
@@ -103,7 +103,7 @@ const Layout: FC = () => {
   }, [position]);
   const reset = useCallback(
     () => setSelectedStations(initialSelectedStations ?? []),
-    [initialSelectedStations]
+    [initialSelectedStations],
   );
 
   const submit = useCallback(
@@ -131,7 +131,7 @@ const Layout: FC = () => {
         console.error(e);
       }
     },
-    [selectedStations]
+    [selectedStations],
   );
 
   const duplicates = new Set(selectedStations).size < 8;
@@ -164,7 +164,7 @@ const Layout: FC = () => {
                     >
                       {effect.name} ({turns})
                     </Table.Cell>
-                  )
+                  ),
               )}
             </Table.Row>
           ))}

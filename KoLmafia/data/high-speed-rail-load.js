@@ -2,7 +2,7 @@ fetch("/high-speed-rail/")
   .then((resp) => resp.text())
   .then((text) => {
     const existingScripts = new Set(
-      document.body.getElementsByTagName("script")
+      document.body.getElementsByTagName("script"),
     );
     const form = document.getElementById("fml");
     if (form) {

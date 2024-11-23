@@ -6,13 +6,17 @@ fetch("/high-speed-rail/index.html")
     );
     const form = document.getElementById("fml");
     if (form) {
-      form.style.display = "none";
+      // form.style.display = "none";
+      document.querySelector(".depot").style.display = "none";
+      document.querySelector("#choochoo ~ center p i").style.display = "none";
+      document.querySelector("#choochoo ~ center p input").style.display =
+        "none";
       document.querySelector("#amodeform").style.display = "none";
       for (const br of document.querySelectorAll("#amodeform ~ br")) {
         br.style.display = "none";
       }
       document.querySelector("#amode").parentNode.style.display = "none";
-      form.insertAdjacentHTML("afterend", text);
+      form.insertAdjacentHTML("beforebegin", text);
     }
     for (const script of document.body.getElementsByTagName("script")) {
       if (existingScripts.has(script)) continue;

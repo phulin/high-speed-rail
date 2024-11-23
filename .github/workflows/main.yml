@@ -44,7 +44,8 @@ jobs:
       - run: yarn run build
       - run: |
           mkdir -p publish/relay/high-speed-rail publish/data
-          cp KoLmafia/relay/high-speed-rail-load.js publish/relay/
+          cp KoLmafia/data/high-speed-rail-load.js publish/data/
+          cp KoLmafia/relay/choice.1485.js publish/relay/
           cp -R dist/* dist/relay/high-speed-rail/
       - uses: s0/git-publish-subdir-action@develop
         env:

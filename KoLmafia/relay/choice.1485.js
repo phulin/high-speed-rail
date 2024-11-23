@@ -2,11 +2,10 @@ const { fileToBuffer, urlDecode, write } = require("kolmafia");
 
 /**
  * @param {string} pageText
- * @returns
  */
 function main(pageText) {
   const snippet = `<script id="snippet">${fileToBuffer(
-    "data/fast-train-load.js"
+    "data/high-speed-rail-load.js"
   )}</script>`;
   write(
     urlDecode(pageText)

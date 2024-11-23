@@ -1,4 +1,4 @@
-fetch("/fast-train/")
+fetch("/high-speed-rail/")
   .then((resp) => resp.text())
   .then((text) => {
     const existingScripts = new Set(

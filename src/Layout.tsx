@@ -171,7 +171,7 @@ const Layout: FC = () => {
           ))}
         </Table.Body>
       </Table.Root>
-      <Stack as="form" align="stretch" m={0}>
+      <Stack as="form" align="stretch" mt={0} mb={16}>
         <input type="hidden" name="whichchoice" value="1485" />
         <input type="hidden" name="option" value="1" />
         <input type="hidden" name="pwd" value={pwd} />

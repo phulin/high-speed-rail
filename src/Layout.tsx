@@ -144,10 +144,10 @@ const Layout: FC = () => {
       borderRadius={8}
     >
       <Heading as="h2" size="lg" m={0}>
-        Your Train Set
+        High-Speed Rail
       </Heading>
       <Text m={0}>Your train is at position {position}.</Text>
-      <Heading as="h3" size="md" m={0}>
+      <Heading as="h3" size="md" mb={0} mt={8}>
         Effects
       </Heading>
       <Table.Root textAlign="center">

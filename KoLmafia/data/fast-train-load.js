@@ -1,4 +1,3 @@
-console.log("going");
 fetch("/fast-train/")
   .then((resp) => resp.text())
   .then((text) => {
@@ -8,9 +7,11 @@ fetch("/fast-train/")
     const form = document.getElementById("fml");
     if (form) {
       form.style.display = "none";
-      document.querySelector(
-        "#fml ~ center #amodeform"
-      ).parentNode.style.display = "none";
+      document.querySelector("#amodeform").style.display = "none";
+      for (const br of document.querySelectorAll("#amodeform ~ br")) {
+        br.style.display = "none";
+      }
+      document.querySelector("#amode").parentNode.style.display = "none";
       form.insertAdjacentHTML("afterend", text);
     }
     for (const script of document.body.getElementsByTagName("script")) {
